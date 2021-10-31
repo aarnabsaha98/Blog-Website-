@@ -1,3 +1,2 @@
 ## Blog Website
 
-### hacktoberfest Topic

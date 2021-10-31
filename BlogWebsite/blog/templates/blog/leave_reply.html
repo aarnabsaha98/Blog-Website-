@@ -1,0 +1,42 @@
+
+{% extends "blog/base.html"%}
+
+{% load crispy_forms_tags %}
+
+{%block title%}Register{%endblock%}
+
+
+{%block content%}
+
+	<div class="content-section">
+
+		<legend class="border-bottom mb-4">Leave a Reply</legend>
+		{% for reply in comment %}
+
+		<article class="media content-section">
+			<!-- <a class="mr-2" href="#">{{ reply.author }}</a> -->
+			<img  class = "rounded-circle article-img" src = "{{ reply.author.profile.image.url }}">
+      		<small class="text-muted">{{ reply.date_posted | date:"d F, Y"}}</small>
+
+      		<h5> {{reply}}</h5>
+    	</article>
+
+		{%endfor%} 
+
+		 	 	<div class= 'border-top pt-3'>
+			<small class ="text-muted">
+					Please Give your Valuable Comment <a class ="ml-2" href="{% url 'leave-reply-post' %}">Feedback</a>
+			</small>	
+		</div>
+	</div>
+
+{%endblock%}
+
+<!-- <div class="media">
+  <img class="align-self-start mr-3" src="..." alt="Generic placeholder image">
+  <div class="media-body">
+    <h5 class="mt-0">Top-aligned media</h5>
+    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+    <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+  </div>
+</div> -->
